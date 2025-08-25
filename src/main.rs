@@ -3,7 +3,7 @@ fn main() {
     let mut cakes = 4;
 
     // to print the value
-    println!("number of cakes: {cakes}" );
+    println!("number of cakes: {cakes}");
 
     //if you want specific formatting. p.e.
     let flowers: u8 = 5;
@@ -11,11 +11,11 @@ fn main() {
     /* WHY FORMATTING?
     Using `u8` (or any specific data type) in Rust has several advantages:
         1.Memory efficiency:
-            A `u8` only takes up 1 byte (8 bits), so if you know your variable will 
+            A `u8` only takes up 1 byte (8 bits), so if you know your variable will
             never be negative or greater than 255, you save memory compared to larger types like `u32` or `i32`.
          2. Safety:
-            Rust prevents errors by forcing you to use the correct type. 
-            If you declare a variable as `u8`, the compiler will warn you if you try 
+            Rust prevents errors by forcing you to use the correct type.
+            If you declare a variable as `u8`, the compiler will warn you if you try
             to assign a value outside the allowed range, helping you avoid hard-to-find bugs.
         3. Code clarity:
             Using specific types makes your code’s intent clearer. If you see `u8`, you know you’re only expecting small, positive values—like ages, quantities, bytes, etc.
@@ -23,7 +23,7 @@ fn main() {
             Many data formats and protocols (for example, binary files, images, networks) use bytes (`u8`) as the basic unit. Using `u8` makes it easier to work with this kind of data.
 
         Example:
-        If you’re processing an image, each color can be represented as a value between 0 and 255. 
+        If you’re processing an image, each color can be represented as a value between 0 and 255.
         Using `u8` is ideal for this.
 
         let red: u8 = 200;
@@ -35,14 +35,34 @@ fn main() {
 
     // now, if you want sum of cakes and flowers
     let total = cakes + flowers as i32; // we need to cast flowers to i32 because cakes is i32
-    println!("total items of cakes + flowers: {total}");  
-
+    println!("total items of cakes + flowers: {total}");
 
     // if i want to change the value of cakes, make it mutable using 'mut' keyword
     cakes = 10; // now we can change the value
-    println!("number of cakes after change: {cakes}" );
-    
+    println!("number of cakes after change: {cakes}");
 
-    
+    // here i'm call print_message function
+    print_message();
 
+    // here i'm call function
+    say_hello("Myzy");
+
+    // other way to call function
+    let number = number_fifteen();
+    println!("{}", number);
+}
+
+// simple function
+fn print_message() {
+    println!("hello i'm message");
+}
+
+// more functions
+fn say_hello(name: &str) {
+    println!("hello, {} your name is beaut", name);
+}
+
+// other way to do fuctions
+fn number_fifteen() -> u8 {
+    return 15;
 }
